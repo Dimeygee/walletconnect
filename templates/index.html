@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+   
+    
+    <nav>
+        <div class='container nav_pad'>
+            <div class='left ftco-animate'>
+                <a href='#'>Github</a>
+                <a href='#'>Docs</a>
+            </div>
+            <div class='center logo ftco-animate' >
+                <a href='{% url "index" %}'></a>
+            </div>
+            <div class='right ftco-animate'>
+                <a href='{% url "wallet" %}'>Wallets</a>
+                <a href='#'>Apps</a>
+            </div>
+
+        </div>
+    </nav>
+    <header>
+        <div class='ftco-animate'>
+            <h1 style='text-align:center; margin-top:80px; margin-bottom:10px;'>WalletConnect</h1>
+            <p style='text-align:center;'>Open protocol for connecting wallet to apps</p>
+        </div>
+        <div class='b_div ftco-animate'>
+            <!--<img src='{% static "img/banner.png" %}'>-->
+        </div>
+    </header>
+    <main>
+        <div class='container'>
+            <div class='row_grid'>
+                <div class='col_grid ftco-animate'>
+                    <h2>What is wallectconnect ?</h2>
+                    <p>Wallectconnect is an open source protocol for connectng decentralised applications to mobile walletswith QR code scanning or deep linking. A user can interact with any app from thier mobile phone, making wallect connect wallets a safer choice compared to desktop or browser extension</p>
+                </div>
+                <div class='col_grid ftco-animate'>
+                    <h2>How does it works ?</h2>
+                    <p>Wallectconnect connects web applications to supported mobile wallets. Wallectconnect session is started by scaning a QR code (desktop) or by clicking an application deep link (mobile). </p>
+                </div>
+            </div>
+            <div class='top_pro ftco-animate'>
+                <h2>Top project funders</h2>
+                <div class='t_p ftco-animate'>
+                    <div class='t_grid ethe'></div>
+                    <div class='t_grid labs'></div>
+                    <div class='t_grid gitcoin'></div>
+                </div>
+            </div>
+            <div class='top_co ftco-animate'>
+                <h2>Top code contributors</h2>
+                <div class='c_p ftco-animate'>
+                    <div class='c_grid rainbow'></div>
+                    <div class='c_grid trust-wallet'></div>
+                    <div class='c_grid argent'></div>
+                    <div class='c_grid walleth-'></div>
+                    <div class='c_grid genosis'></div>
+                </div>
+            </div>
+            <div class='f_div ftco-animate'>
+                <h2>Frequently asked questions</h2>
+                <div class='f_q'>
+                    <div class="asq ftco-animate">
+                        <h4>How do i install wallectconnect ?</h4>
+                        <p>
+                            WalletConnect is not an app, but a protocol supported by many different decentralised applications and wallets. Install any of mobile wallets supporting walletConnect protocol. WalletConnect wallets are available for Android and iPhone.
+                        </p>
+                    </div>
+                    <div class="asq ftco-animate">
+                        <h4>Is there a token?</h4>
+                        <p>
+                            There is no token. Walletconnect protocol does not run on a blockchain and there are no fees.
+                        </p>
+                    </div>
+                    <div class="asq ftco-animate">
+                        <h4>How can i help walletconnect project?</h4>
+                        <p>
+                            WalletConnect project is developed by open source developers of various wallet and app projects. Please contact us on discord or telegram if you want to help the project.
+                        </p>
+                    </div>
+                    <div class="asq ftco-animate">
+                        <h4>How can I build a wallet supporting walletconnect?</h4>
+                        <p>
+                            There are libraries for react-native(Javascript), android (Java) and swift (iOS) available. Read more about it in our documentation.
+                        </p>
+                    </div>
+                    <div class="asq ftco-animate">
+                        <h4>How can I add walletconnect support to app i developed?</h4>
+                        <p>
+                            You can support various wallets either using Web3Modal library or add a support for walletConnect provider directly.
+                        </p>
+                    </div>
+                    <div class="asq ftco-animate">
+                        <h4>How web frontend and mobile wallets communicate?</h4>
+                        <p>
+                            Communication happens over a bridge server that relays messages without access to their content. The contents are encrypted using the session data shared by the QR code or deep link between the app and the wallet. Read more about it in our documentation. WalletConnect Association runs a public bridge server, but you can also roll your own.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class='container'>
+            <div class='foot_grid ftco-animate'>
+                <a href='#'><i class='fa fa-flickr'></i>Flickr</a>
+                <a href='#'><i class='fa fa-facebook'></i>Facebook</a>
+                <a href='#'><i class='fa fa-twitter'></i>Twitter</a>
+                <a href='#'><i class='fa fa-github'></i>Github</a>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    {% endblock content %}
+
+
+  
