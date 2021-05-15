@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['wallettconnect.herokuapp.com']
+ALLOWED_HOSTS = ["wallettconnect.herokuapp.com",'https://wallettconnect.herokuapp.com/']
 
 
 # Application definition
